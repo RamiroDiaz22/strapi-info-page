@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_professions_profesiones",
+  "info": {
+    "displayName": "Profesiones",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "string",
+      "required": true,
+      "maxLength": 90
+    },
+    "active": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "categories": {
+      "type": "enumeration",
+      "enum": [
+        "electricidad",
+        "albañileria",
+        "placas",
+        "plomeria",
+        "mantenimiento",
+        "carpinteria"
+      ],
+      "required": true
+    }
+  }
+}

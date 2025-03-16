@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_home_service",
+  "info": {
+    "displayName": "service"
+  },
+  "options": {},
+  "attributes": {
+    "head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.new-section",
+      "required": true
+    },
+    "professions": {
+      "displayName": "Profesiones",
+      "type": "component",
+      "repeatable": true,
+      "component": "professions.profesiones",
+      "required": true,
+      "max": 6,
+      "min": 3
+    }
+  }
+}

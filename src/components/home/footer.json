@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_home_footer",
+  "info": {
+    "displayName": "footer"
+  },
+  "options": {},
+  "attributes": {
+    "socialMedia": {
+      "displayName": "Social media",
+      "type": "component",
+      "repeatable": true,
+      "component": "contact-me.social-media"
+    }
+  }
+}

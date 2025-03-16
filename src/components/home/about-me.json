@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_home_about-me",
+  "info": {
+    "displayName": "about-me"
+  },
+  "options": {},
+  "attributes": {
+    "head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.new-section",
+      "required": true
+    },
+    "services": {
+      "displayName": "Services",
+      "type": "component",
+      "repeatable": true,
+      "component": "services.services",
+      "max": 4,
+      "required": true
+    },
+    "image": {
+      "allowedTypes": ["images", "files"],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "desciptionImage": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    }
+  }
+}

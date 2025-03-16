@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_home_contact-me",
+  "info": {
+    "displayName": "contact-me"
+  },
+  "options": {},
+  "attributes": {
+    "head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.new-section",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "regex": "^11\\s\\d{4}\\s\\d{4}$",
+      "required": false,
+      "default": "11 5748 4123"
+    },
+    "email": {
+      "type": "email"
+    },
+    "location": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "timetables": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "why": {
+      "displayName": "Why",
+      "type": "component",
+      "repeatable": true,
+      "component": "contact-me.why",
+      "required": true,
+      "max": 6
+    }
+  }
+}

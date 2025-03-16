@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_services_services",
+  "info": {
+    "displayName": "Services",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 75
+    }
+  }
+}

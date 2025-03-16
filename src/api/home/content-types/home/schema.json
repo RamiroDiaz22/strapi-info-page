@@ -1,0 +1,63 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.hero",
+      "required": true
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.header",
+      "required": true
+    },
+    "aboutMe": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.about-me",
+      "required": true
+    },
+    "contractMe": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.contact-me",
+      "required": true
+    },
+    "portfolio": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.portfolio",
+      "required": true
+    },
+    "services": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.service",
+      "required": true
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.testimonial",
+      "required": true
+    },
+    "footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.footer",
+      "required": true
+    }
+  }
+}

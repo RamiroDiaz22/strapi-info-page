@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_hero_hero_images",
+  "info": {
+    "displayName": "hero-image"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "maxLength": 60
+    }
+  }
+}
