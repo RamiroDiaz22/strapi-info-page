@@ -369,6 +369,82 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
+  collectionName: 'categories';
+  info: {
+    description: '';
+    displayName: 'categories';
+    pluralName: 'categories';
+    singularName: 'categorie';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categorie: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 20;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 90;
+      }>;
+    isActive: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::categorie.categorie'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'categorie'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    works: Schema.Attribute.Relation<'manyToMany', 'api::work.work'>;
+  };
+}
+
+export interface ApiConfigConfig extends Struct.SingleTypeSchema {
+  collectionName: 'configs';
+  info: {
+    displayName: 'Config';
+    pluralName: 'configs';
+    singularName: 'config';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::config.config'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    socialMedia: Schema.Attribute.Component<'contact-me.social-media', true> &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
@@ -383,15 +459,15 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   attributes: {
     aboutMe: Schema.Attribute.Component<'home.about-me', false> &
       Schema.Attribute.Required;
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::categorie.categorie'
+    >;
     contractMe: Schema.Attribute.Component<'home.contact-me', false> &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    footer: Schema.Attribute.Component<'home.footer', false> &
-      Schema.Attribute.Required;
-    header: Schema.Attribute.Component<'home.header', false> &
-      Schema.Attribute.Required;
     hero: Schema.Attribute.Component<'home.hero', false> &
       Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -407,6 +483,99 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Struct.SingleTypeSchema {
+  collectionName: 'projects';
+  info: {
+    description: '';
+    displayName: 'Project';
+    pluralName: 'projects';
+    singularName: 'project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 180;
+      }>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project.project'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 70;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWorkWork extends Struct.CollectionTypeSchema {
+  collectionName: 'works';
+  info: {
+    description: '';
+    displayName: 'Work';
+    pluralName: 'works';
+    singularName: 'work';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::categorie.categorie'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    isActive: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::work.work'> &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos', true> &
+      Schema.Attribute.Required;
+    nameClient: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 40;
+      }>;
+    previewImage: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    typeClient: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    workingDate: Schema.Attribute.Date & Schema.Attribute.Required;
   };
 }
 
@@ -919,7 +1088,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::categorie.categorie': ApiCategorieCategorie;
+      'api::config.config': ApiConfigConfig;
       'api::home.home': ApiHomeHome;
+      'api::project.project': ApiProjectProject;
+      'api::work.work': ApiWorkWork;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

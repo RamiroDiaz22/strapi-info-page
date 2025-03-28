@@ -146,6 +146,7 @@ export interface HomeHero extends Struct.ComponentSchema {
 export interface HomePortfolio extends Struct.ComponentSchema {
   collectionName: 'components_home_projects';
   info: {
+    description: '';
     displayName: 'projects';
   };
   attributes: {
@@ -159,6 +160,7 @@ export interface HomePortfolio extends Struct.ComponentSchema {
         },
         number
       >;
+    works: Schema.Attribute.Relation<'oneToMany', 'api::work.work'>;
   };
 }
 
