@@ -1,7 +1,8 @@
 {
   "collectionName": "components_home_projects",
   "info": {
-    "displayName": "projects"
+    "displayName": "projects",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -18,6 +19,11 @@
       "component": "project.project",
       "required": true,
       "max": 3
+    },
+    "works": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::work.work"
     }
   }
 }

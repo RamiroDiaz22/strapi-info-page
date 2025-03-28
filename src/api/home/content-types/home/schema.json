@@ -17,12 +17,6 @@
       "component": "home.hero",
       "required": true
     },
-    "header": {
-      "type": "component",
-      "repeatable": false,
-      "component": "home.header",
-      "required": true
-    },
     "aboutMe": {
       "type": "component",
       "repeatable": false,
@@ -53,11 +47,10 @@
       "component": "home.testimonial",
       "required": true
     },
-    "footer": {
-      "type": "component",
-      "repeatable": false,
-      "component": "home.footer",
-      "required": true
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::categorie.categorie"
     }
   }
 }
