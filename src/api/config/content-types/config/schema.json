@@ -4,21 +4,26 @@
   "info": {
     "singularName": "config",
     "pluralName": "configs",
-    "displayName": "Config"
+    "displayName": "Config",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "name": {
-      "type": "string",
-      "required": true,
-      "maxLength": 30
-    },
     "socialMedia": {
       "type": "component",
       "repeatable": true,
       "component": "contact-me.social-media",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "regex": "^11\\s\\d{4}\\s\\d{4}$",
+      "default": "11 5221 5467"
+    },
+    "email": {
+      "type": "email",
       "required": true
     }
   }

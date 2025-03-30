@@ -79,17 +79,16 @@ export interface HomeAboutMe extends Struct.ComponentSchema {
 export interface HomeContactMe extends Struct.ComponentSchema {
   collectionName: 'components_home_contact-me';
   info: {
+    description: '';
     displayName: 'contact-me';
   };
   attributes: {
-    email: Schema.Attribute.Email;
     head: Schema.Attribute.Component<'section.new-section', false> &
       Schema.Attribute.Required;
     location: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 30;
       }>;
-    phone: Schema.Attribute.String & Schema.Attribute.DefaultTo<'11 5748 4123'>;
     timetables: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 40;
@@ -152,14 +151,6 @@ export interface HomePortfolio extends Struct.ComponentSchema {
   attributes: {
     head: Schema.Attribute.Component<'section.new-section', false> &
       Schema.Attribute.Required;
-    projects: Schema.Attribute.Component<'project.project', true> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 3;
-        },
-        number
-      >;
     works: Schema.Attribute.Relation<'oneToMany', 'api::work.work'>;
   };
 }
@@ -167,20 +158,12 @@ export interface HomePortfolio extends Struct.ComponentSchema {
 export interface HomeService extends Struct.ComponentSchema {
   collectionName: 'components_home_service';
   info: {
+    description: '';
     displayName: 'service';
   };
   attributes: {
     head: Schema.Attribute.Component<'section.new-section', false> &
       Schema.Attribute.Required;
-    professions: Schema.Attribute.Component<'professions.profesiones', true> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 6;
-          min: 3;
-        },
-        number
-      >;
   };
 }
 
@@ -222,6 +205,8 @@ export interface ProfessionsProfesiones extends Struct.ComponentSchema {
         'plomeria',
         'mantenimiento',
         'carpinteria',
+        'construccion',
+        'reformas',
       ]
     > &
       Schema.Attribute.Required;
