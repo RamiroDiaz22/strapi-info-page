@@ -12,14 +12,6 @@
       "component": "section.new-section",
       "required": true
     },
-    "projects": {
-      "displayName": "Projects",
-      "type": "component",
-      "repeatable": true,
-      "component": "project.project",
-      "required": true,
-      "max": 3
-    },
     "works": {
       "type": "relation",
       "relation": "oneToMany",

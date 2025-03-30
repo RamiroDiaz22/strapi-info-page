@@ -414,6 +414,7 @@ export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
 export interface ApiConfigConfig extends Struct.SingleTypeSchema {
   collectionName: 'configs';
   info: {
+    description: '';
     displayName: 'Config';
     pluralName: 'configs';
     singularName: 'config';
@@ -425,17 +426,14 @@ export interface ApiConfigConfig extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::config.config'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 30;
-      }>;
+    phone: Schema.Attribute.String & Schema.Attribute.DefaultTo<'11 5221 5467'>;
     publishedAt: Schema.Attribute.DateTime;
     socialMedia: Schema.Attribute.Component<'contact-me.social-media', true> &
       Schema.Attribute.Required;

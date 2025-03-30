@@ -24,7 +24,9 @@
         "placas",
         "plomeria",
         "mantenimiento",
-        "carpinteria"
+        "carpinteria",
+        "construccion",
+        "reformas"
       ],
       "required": true
     }
