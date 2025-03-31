@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_home_hero",
+  "info": {
+    "displayName": "hero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.new-section",
+      "required": true
+    },
+    "heroImage": {
+      "displayName": "hero-image",
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.hero-image",
+      "required": true
+    }
+  }
+}

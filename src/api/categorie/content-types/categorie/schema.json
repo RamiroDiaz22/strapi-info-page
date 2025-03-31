@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "categorie",
+    "pluralName": "categories",
+    "displayName": "categories",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "categorie": {
+      "type": "string",
+      "unique": true,
+      "required": true,
+      "maxLength": 20
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "categorie"
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "maxLength": 90
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "works": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::work.work",
+      "mappedBy": "categories"
+    }
+  }
+}

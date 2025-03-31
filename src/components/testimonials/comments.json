@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_testimonials_comments",
+  "info": {
+    "displayName": "Comments"
+  },
+  "options": {},
+  "attributes": {
+    "comment": {
+      "type": "string",
+      "maxLength": 140,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "type": {
+      "type": "string",
+      "maxLength": 30,
+      "required": true
+    }
+  }
+}

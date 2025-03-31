@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_home_contact-me",
+  "info": {
+    "displayName": "contact-me",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.new-section",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "timetables": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "why": {
+      "displayName": "Why",
+      "type": "component",
+      "repeatable": true,
+      "component": "contact-me.why",
+      "required": true,
+      "max": 6
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_home_header",
+  "info": {
+    "displayName": "header"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    }
+  }
+}

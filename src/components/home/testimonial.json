@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_home_testimonial",
+  "info": {
+    "displayName": "testimonial"
+  },
+  "options": {},
+  "attributes": {
+    "head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.new-section",
+      "required": true
+    },
+    "comments": {
+      "displayName": "Comments",
+      "type": "component",
+      "repeatable": true,
+      "component": "testimonials.comments",
+      "required": true,
+      "max": 3,
+      "min": 1
+    }
+  }
+}

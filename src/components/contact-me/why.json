@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_contact_me_whies",
+  "info": {
+    "displayName": "Why",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "reasons": {
+      "type": "string",
+      "maxLength": 60,
+      "required": true
+    }
+  }
+}

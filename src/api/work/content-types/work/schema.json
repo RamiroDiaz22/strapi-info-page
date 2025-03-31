@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "works",
+  "info": {
+    "singularName": "work",
+    "pluralName": "works",
+    "displayName": "Work",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 80
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "typeClient": {
+      "type": "string",
+      "maxLength": 30,
+      "required": false
+    },
+    "nameClient": {
+      "type": "string",
+      "required": false,
+      "maxLength": 40
+    },
+    "workingDate": {
+      "required": true,
+      "type": "date"
+    },
+    "location": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "title"
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categorie.categorie",
+      "inversedBy": "works"
+    },
+    "previewImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  }
+}

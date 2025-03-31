@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_section_new_sections",
+  "info": {
+    "displayName": "New section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 180,
+      "required": true
+    }
+  }
+}
